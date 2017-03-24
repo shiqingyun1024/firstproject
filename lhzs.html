@@ -1,0 +1,507 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<!-- Define Charset -->
+<meta charset="utf-8" />
+
+<!-- Responsive Metatag -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Page Title -->
+<title>量化择时模型|哈工大大数据集团</title>
+
+<!-- Description and Keyword -->
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<!-- Stylesheet and Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="css/lightbox.css" />
+<link rel="stylesheet" href="css/styles.css" />
+
+<link rel="stylesheet" type="text/css" href="css/skins/orange.css"
+	title="orange" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/blue.css" title="blue" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/green.css" title="green" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/pink.css" title="pink" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/purple.css" title="purple" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/cyan.css" title="cyan" />
+<script type="text/javascript" src="js/styleswitcher.js"></script>
+
+
+<!-- Javascript Library -->
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/lightbox.js"></script>
+<script type="text/javascript" src="js/cycle.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+<!--[if IE 8]><link rel="stylesheet" href="css/ie8.css"/> <![endif]-->
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".styles-open").click(function() {
+			$(".styles, .styles-open").animate({
+				"left" : "-70px"
+			}, 1000);
+			$(".styles-closed").animate({
+				"left" : "0"
+			}, 1000);
+			return false;
+		});
+		$(".styles-closed a").click(function() {
+			$(".styles-closed").animate({
+				"left" : "-40px"
+			}, 1000);
+			$(".styles").animate({
+				"left" : "0"
+			}, 1000);
+			$(".styles-open").animate({
+				"left" : "70"
+			}, 1000);
+			return false;
+		});
+
+	});
+</script>
+<style>
+body {
+	font-family: Microsoft YaHei;
+}
+
+.table {
+	height: 100px;
+}
+</style>
+<script type="text/javascript" src="js/bootstra.min.js"></script>
+</head>
+<body>
+
+	<!-- Main Content -->
+	<div class="main-content">
+		<div class="wrapper">
+
+			<!-- Header -->
+			<div class="header">
+				<div class="logo">
+					<img src="img/logo.png" alt="" />
+				</div>
+				<div class="navi">
+					<ul>
+						<li class="active"><a href="lhzs.html">择时模型</a>
+						</li>
+						<li><a href="lhld.html">轮动模型</a>
+						</li>
+						<li><a href="wyyj.html">违约预警</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- END Header -->
+			<div style="clear: both;"></div>
+			<!-- Slider -->
+			<div class="slider">
+
+				<!-- Slider Content 1 -->
+				<div class="slide">
+					<div class="slider-txt">
+						<h3>大盘择时模型概述</h3>
+						<ul>
+							<li>1. 模型每日晚间给出下5个交易日的涨跌方向，供您参考。建议在下一个交易日开盘买入对应的ETF指数基金，持有5个交易日，并设置止盈止损线。</li>
+							<li>2. 模型根据领先的人工智能技术为基础进行开发，并针对中国市场特性进行改良完善。</li>
+							<li>3. 模型对大盘指数的短期波动方向进行择时预测，力求看涨时持仓把握上升利润，看跌时空仓保存胜利果实。</li>
+						</ul>
+					</div>
+
+				</div>
+
+
+			</div>
+			<!-- END Slider -->
+			<div style="clear: both;"></div>
+
+		</div>
+		<!-- END Wrapper -->
+	</div>
+	<!-- END Main Content -->
+
+	<div class="pagi">
+		<div class="wrapper">
+			<div id="nav"></div>
+		</div>
+	</div>
+
+	<!-- Features -->
+	<div class="features">
+		<div class="wrapper">
+			<h3>
+				<span>历史信号情况<br> <br> </span>
+			</h3>
+
+
+			<div class="row-fluid">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>日期</th>
+							<th>模型信号</th>
+							<th>回测净值</th>
+							<th>基准净值</th>
+
+						</tr>
+					</thead>
+					<tbody id="add">
+
+						<tr>
+							<td>20170126</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.14</td>
+						</tr>
+						<tr>
+							<td>20170125</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.09</td>
+						</tr>
+						<tr>
+							<td>20170124</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.07</td>
+						</tr>
+						<tr>
+							<td>20170123</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.08</td>
+						</tr>
+						<tr>
+							<td>20170120</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.02</td>
+						</tr>
+						<tr>
+							<td>20170119</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>6.93</td>
+						</tr>
+						<tr>
+							<td>20170118</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>6.96</td>
+						</tr>
+						<tr>
+							<td>20170117</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>6.98</td>
+						</tr>
+						<tr>
+							<td>20170116</td>
+							<td>看跌</td>
+							<td>14.91</td>
+							<td>6.92</td>
+						</tr>
+						<tr>
+							<td>20170113</td>
+							<td>看跌</td>
+							<td>15.10</td>
+							<td>7.11</td>
+						</tr>
+						<tr>
+							<td>20170126</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.14</td>
+						</tr>
+						<tr>
+							<td>20170125</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.09</td>
+						</tr>
+						<tr>
+							<td>20170124</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.07</td>
+						</tr>
+						<tr>
+							<td>20170123</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.08</td>
+						</tr>
+						<tr>
+							<td>20170120</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>7.02</td>
+						</tr>
+						<tr>
+							<td>20170119</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>6.93</td>
+						</tr>
+						<tr>
+							<td>20170118</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>6.96</td>
+						</tr>
+						<tr>
+							<td>20170117</td>
+							<td>看跌</td>
+							<td>14.51</td>
+							<td>6.98</td>
+						</tr>
+						<tr>
+							<td>20170116</td>
+							<td>看跌</td>
+							<td>14.91</td>
+							<td>6.92</td>
+						</tr>
+						<tr>
+							<td>20170113</td>
+							<td>看跌</td>
+							<td>15.10</td>
+							<td>7.11</td>
+						</tr>
+					</tbody>
+				</table>
+				<h4>
+					自2006年1月1日起开始回测，基准选取中证500指数。
+					</h4>
+				<button type="button" id='btn' class="btn btn-warning" data-toggle="collapse"
+						data-target="#demo" >更多</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="clear"></div>
+
+	<!-- iMac Slider -->
+	<div class="slider2">
+		<div class="wrapper">
+			<h3>
+				<span>模型回测收益图 </span>
+			</h3>
+			<div id="container"></div>
+			<div id="graphdiv1"></div>
+			<h4>模拟买卖指数进行回测，回测结果仅为显示模型效果，不能代表实际收益。假设交易费率为0.1%， 止盈为6%，
+				止损为-7%。</h4>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- Features -->
+	<div class="features">
+		<div class="wrapper">
+			<h3>
+				<span> 模型胜率统计<br> <br> </span>
+			</h3>
+			<div class="row-fluid responsive" id="scroll1">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>正确率</th>
+							<th>净值</th>
+							<th>夏普比率</th>
+							<th>最大回撤</th>
+							<th>年化收益</th>
+							<th>超额收益</th>
+
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<td>64.0%</td>
+							<td>14.5</td>
+							<td>1.30</td>
+							<td>-29.4%</td>
+							<td>27.0%</td>
+							<td>737%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h4>模拟买卖指数进行回测， 回测结果仅为显示模型效果， 不能代表实际 收益。</h4>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- Features -->
+	<div class="features" id="fenNian">
+		<div class="wrapper">
+			<h3>
+				<span>分年度风险收益统计<br> <br> </span>
+			</h3>
+			<div class="row-fluid responsive" id="scroll2">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>年份</th>
+							<th>收益率</th>
+							<th >夏普比率</th>
+							<th>最大回撤</th>
+							<th>基准收益</th>
+							<th>超额收益</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2006</td>
+							<td>60%</td>
+							<td>2.38</td>
+							<td>-13.2%</td>
+							<td>98%</td>
+							<td>-38%</td>
+						
+						<tr>
+							<td>2007</td>
+							<td>176%</td>
+							<td>3.407</td>
+							<td>-17.21%</td>
+							<td>187%</td>
+							<td>-10%</td>
+						
+						<tr>
+							<td>2008</td>
+							<td>-14%</td>
+							<td>-0.654</td>
+							<td>-22.30%</td>
+							<td>-62%</td>
+							<td>48%</td>
+						
+						<tr>
+							<td>2009</td>
+							<td>40%</td>
+							<td>1.572</td>
+							<td>-11.38%</td>
+							<td>122%</td>
+							<td>-82%</td>
+						
+						<tr>
+							<td>2010</td>
+							<td>10%</td>
+							<td>0.569</td>
+							<td>-16.83%</td>
+							<td>9%</td>
+							<td>1%</td>
+						
+						<tr>
+							<td>2011</td>
+							<td>8%</td>
+							<td>1.195</td>
+							<td>-2.64%</td>
+							<td>-35%</td>
+							<td>42%</td>
+						
+						<tr>
+							<td>2012</td>
+							<td>0%</td>
+							<td>-</td>
+							<td>0.00%</td>
+							<td>3%</td>
+							<td>-3%</td>
+						
+						<tr>
+							<td>2013</td>
+							<td>16%</td>
+							<td>1.442</td>
+							<td>-4.69%</td>
+							<td>18%</td>
+							<td>-2%</td>
+						
+						<tr>
+							<td>2014</td>
+							<td>38%</td>
+							<td>2.324</td>
+							<td>-9.11%</td>
+							<td>38%</td>
+							<td>0%</td>
+						
+						<tr>
+							<td>2015</td>
+							<td>80%</td>
+							<td>2.130</td>
+							<td>-25.50%</td>
+							<td>41%</td>
+							<td>40%</td>
+						
+						<tr>
+							<td>2016</td>
+							<td>-16%</td>
+							<td>-0.775</td>
+							<td>-20.33%</td>
+							<td>-18%</td>
+							<td>2%</td>
+						
+						<tr>
+							<td>2017</td>
+							<td>-5.8%</td>
+							<td>-6.928</td>
+							<td>-6.08%</td>
+							<td>-0.6%</td>
+							<td>-5.2%</td>
+					
+					</tbody>
+				</table>
+
+
+			</div>
+			
+	<h4>
+				<span>量化模型胜率并非100%，市场环境改变等因素可能使得模型失效，历史表现也不能代表未来。<br><br></span>
+			</h4>
+	<h3>
+				<span>请特别注意风险，谨慎投资！</span>
+			</h3>
+		</div>
+	</div>
+
+
+	<!-- Footer -->
+	<div class="footer">
+		<div class="wrapper">
+			<div class="copy">
+				<p>
+					<strong>哈工大大数据产业有限公司 </strong><span> &#169; 2017. 版权所有 <a
+						href="http://www.cssmoban.com/" title="网页模板" target="_blank">中国
+							上海市长宁区江苏路369号兆丰世贸大厦18CD </a> </span>
+				</p>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
+<script src="js/hidden.js"></script>
+<script src="js/more/more.js"></script>
+<script src="js/chart/highstock.js"></script>
+<script src="js/chart/chart1.js"></script>

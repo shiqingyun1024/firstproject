@@ -1,0 +1,35 @@
+/* Main Content Background */
+.main-content { background-color:#8b24c9; } 
+.main-content2 { background-color:#8b24c9; border-bottom:4px solid #7a1bb0; } 
+
+/* Slider Pagination*/
+.pagi { background-color:#7a1bb0; }
+#nav { background:url(../../img/skins/pagi-5.png) no-repeat; }
+
+/* Titles Span*/
+ h3 span { color:#8b24c9; }
+ 
+/* Features Title Hover */
+.featu:hover h1 { color:#8b24c9; }
+
+/* Zlayout */
+.z-txt p.subtitles { color:#8b24c9; }
+.zlayout2 { background-color:#8b24c9;}
+
+/* Buttons */
+.bt3 {  background:url(../../img/skins/button-purple.png) no-repeat; }
+
+/* Testimonials Hover */
+.testimonials .span4:hover .testi-head p { background-color:#8b24c9; }
+#nav2 a.activeSlide { background-color:#8b24c9; }
+
+/* Footer */
+.footer { border-top:4px solid #7a1bb0; background-color:#8b24c9; }
+
+/* Pricing Subpage  Active Tab */
+.tabs-nav .ui-tabs-active a { background-color:#8b24c9;  color:#e0e0e0; }
+.ph   {  background-color:#8b24c9;  }
+
+/* Contact Subpage */
+.cont a { color:#8b24c9; }
+input.input-submit { background-color:#8b24c9; }

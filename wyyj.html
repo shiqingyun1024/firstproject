@@ -1,0 +1,397 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<!-- Define Charset -->
+<meta charset="utf-8" />
+
+<!-- Responsive Metatag -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Page Title -->
+<title>债券违约预警|哈工大大数据集团</title>
+
+<!-- Description and Keyword -->
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<!-- Stylesheet and Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="css/lightbox.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<!--<link rel="stylesheet" href="demo.css" />-->
+
+<link rel="stylesheet" type="text/css" href="css/skins/orange.css"
+	title="orange" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/blue.css" title="blue" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/green.css" title="green" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/pink.css" title="pink" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/purple.css" title="purple" />
+<link rel="alternate stylesheet" type="text/css"
+	href="css/skins/cyan.css" title="cyan" />
+<script type="text/javascript" src="js/styleswitcher.js"></script>
+
+
+<!-- Javascript Library -->
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/lightbox.js"></script>
+<script type="text/javascript" src="js/cycle.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="js/bselect/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/bselect/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="js/bselect/js/i18n/defaults-zh_CN.min.js"></script>
+
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+<!--[if IE 8]><link rel="stylesheet" href="css/ie8.css"/> <![endif]-->
+
+
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$(".styles-open").click(function() {
+					$(".styles, .styles-open").animate({
+						"left" : "-70px"
+					}, 1000);
+					$(".styles-closed").animate({
+						"left" : "0"
+					}, 1000);
+					return false;
+				});
+				$(".styles-closed a").click(function() {
+					$(".styles-closed").animate({
+						"left" : "-40px"
+					}, 1000);
+					$(".styles").animate({
+						"left" : "0"
+					}, 1000);
+					$(".styles-open").animate({
+						"left" : "70"
+					}, 1000);
+					return false;
+				});
+				var companies = {
+					"紫光集团有限公司" : "正常",
+					"重庆西永微电子产业园区开发有限公司" : "正常",
+					"重庆化医控股(集团)公司" : "正常",
+					"重庆高速公路集团有限公司" : "正常",
+					"重庆保税港区开发管理集团有限公司" : "正常",
+					"中铁铁龙集装箱物流股份有限公司" : "正常",
+					"中粮地产(集团)股份有限公司" : "可能违约",
+					"中交投资有限公司" : "数据不足",
+					"中交广州航道局有限公司" : "数据不足",
+					"中国中铁股份有限公司" : "正常",
+					"中国中煤能源股份有限公司" : "正常",
+					"中国中化股份有限公司" : "正常",
+					"中国邮政速递物流股份有限公司" : "数据不足",
+					"中国邮政集团公司" : "数据不足",
+					"中国冶金科工集团有限公司" : "正常",
+					"中国冶金科工股份有限公司" : "正常",
+					"中国盐业总公司" : "正常",
+					"中国五矿集团公司" : "正常",
+					"中国五矿股份有限公司" : "正常",
+					"中国外运股份有限公司" : "正常",
+					"中国通用技术(集团)控股有限责任公司" : "正常",
+					"中国铁路总公司" : "数据不足",
+					"中国铁路物资股份有限公司" : "正常",
+					"中国平煤神马能源化工集团有限责任公司" : "正常",
+					"中国南车集团公司" : "正常",
+					"中国铝业股份有限公司" : "正常",
+					"中国铝业公司" : "正常",
+					"中国节能环保集团公司" : "正常",
+					"中国建材股份有限公司" : "正常",
+					"中国机械工业集团有限公司" : "正常",
+					"中国化工油气股份有限公司" : "数据不足",
+					"中国华信邮电经济开发中心" : "数据不足",
+					"中国华能集团公司" : "正常",
+					"中国核能电力股份有限公司" : "正常",
+					"中国航空技术深圳有限公司" : "正常",
+					"中国航空技术国际控股有限公司" : "正常",
+					"中国国际航空股份有限公司" : "正常",
+					"中国工艺(集团)公司" : "正常",
+					"中国电力建设股份有限公司" : "正常",
+					"中国大唐集团新能源股份有限公司" : "正常",
+					"中国大唐集团公司" : "正常",
+					"中国船舶重工集团公司" : "正常",
+					"中国船舶工业集团公司" : "正常",
+					"中国城市建设控股集团有限公司" : "正常",
+					"中电投贵州金元集团股份有限公司" : "可能违约",
+					"中储发展股份有限公司" : "正常",
+					"郑州市轨道交通有限公司" : "数据不足",
+					"浙江绩丰岩土技术股份有限公司,浙江华铁建筑安全科技股份有限公司" : "数据不足",
+					"云南省投资控股集团有限公司" : "正常",
+					"云南省能源投资集团有限公司" : "正常",
+					"永城煤电控股集团有限公司" : "正常",
+					"阳泉煤业(集团)有限责任公司" : "正常",
+					"兖矿集团有限公司" : "正常",
+					"亚邦投资控股集团有限公司" : "可能违约",
+					"徐州矿务集团有限公司" : "正常",
+					"徐工集团工程机械有限公司" : "正常",
+					"西部矿业集团有限公司" : "正常",
+					"西安市地下铁道有限责任公司" : "正常",
+					"西安城市基础设施建设投资集团有限公司" : "正常",
+					"武汉地铁集团有限公司" : "正常",
+					"无锡产业发展集团有限公司" : "正常",
+					"潍柴动力股份有限公司" : "正常",
+					"天津市保障住房建设投资有限公司" : "数据不足",
+					"天津港(集团)有限公司" : "正常",
+					"天津城市基础设施建设投资集团有限公司" : "正常",
+					"天津滨海新区建设投资集团有限公司" : "正常",
+					"四川省铁路产业投资集团有限责任公司" : "正常",
+					"四川省水电投资经营集团有限公司" : "可能违约",
+					"四川省能源投资集团有限责任公司" : "正常",
+					"四川省交通投资集团有限责任公司" : "正常",
+					"首钢总公司" : "正常",
+					"首都机场集团公司" : "正常",
+					"世茂房地产控股有限公司" : "数据不足",
+					"神华集团有限责任公司" : "正常",
+					"深圳市投资控股有限公司" : "正常",
+					"深圳市特区建设发展集团有限公司" : "正常",
+					"上海中星(集团)有限公司" : "正常",
+					"上海金桥出口加工区开发股份有限公司" : "正常",
+					"上海建工集团股份有限公司" : "正常",
+					"上海环境集团有限公司" : "正常",
+					"上海纺织(集团)有限公司" : "正常",
+					"上海帝泰发展有限公司" : "正常",
+					"陕西省交通建设集团公司" : "正常",
+					"陕西省高速公路建设集团公司" : "正常",
+					"山西太钢不锈钢股份有限公司" : "正常",
+					"山西能源交通投资有限公司" : "正常",
+					"山西焦煤集团有限责任公司" : "正常",
+					"山东黄金集团有限公司" : "正常",
+					"山东高速集团有限公司" : "正常",
+					"厦门港务控股集团有限公司" : "正常",
+					"三林万业(上海)企业集团有限公司" : "数据不足",
+					"青海盐湖工业股份有限公司" : "正常",
+					"内蒙古博源控股集团有限公司" : "可能违约",
+					"南京市河西新城区国有资产经营控股(集团)有限责任公司" : "可能违约",
+					"南京地铁集团有限公司" : "正常",
+					"南昌市政公用投资控股有限责任公司" : "正常",
+					"南昌城市建设投资发展有限公司" : "正常",
+					"龙源电力集团股份有限公司" : "正常",
+					"昆山市创业控股有限公司" : "正常",
+					"昆明交通产业股份有限公司" : "正常",
+					"昆明产业开发投资有限责任公司" : "正常",
+					"锦江国际(集团)有限公司" : "正常",
+					"江西铜业集团公司" : "正常",
+					"江西省水利投资集团有限公司" : "正常",
+					"江西赣粤高速公路股份有限公司" : "正常",
+					"江苏省国信资产管理集团有限公司" : "正常",
+					"江苏宁沪高速公路股份有限公司" : "正常",
+					"江苏交通控股有限公司" : "正常",
+					"淮南矿业(集团)有限责任公司" : "正常",
+					"华润医药控股有限公司" : "正常",
+					"华能新能源股份有限公司" : "正常",
+					"华电国际电力股份有限公司" : "正常",
+					"华电福新能源股份有限公司" : "正常",
+					"湖南省高速公路建设开发总公司" : "正常",
+					"湖北省交通投资集团有限公司" : "正常",
+					"河南省收费还贷高速公路管理有限公司" : "正常",
+					"河南交通投资集团有限公司" : "正常",
+					"河北省物流产业集团有限公司" : "可能违约",
+					"河北交通投资集团公司" : "正常",
+					"国家电力投资集团公司" : "正常",
+					"贵州高速公路集团有限公司" : "正常",
+					"贵州赤天化集团有限责任公司" : "正常",
+					"贵州产业投资(集团)有限责任公司" : "正常",
+					"广州汽车工业集团有限公司" : "正常",
+					"广州交通投资集团有限公司" : "正常",
+					"广州地铁集团有限公司" : "正常",
+					"广西投资集团有限公司" : "正常",
+					"广西铁路投资集团有限公司" : "正常",
+					"广东省粤电集团有限公司" : "正常",
+					"广东省广晟资产经营有限公司" : "正常",
+					"广东南方报业传媒集团有限公司" : "正常",
+					"光明食品(集团)有限公司" : "正常",
+					"谷神生物科技集团有限公司" : "正常",
+					"甘肃省公路航空旅游投资集团有限公司" : "正常",
+					"福建省投资开发集团有限责任公司" : "正常",
+					"大连星海湾金融商务区投资管理股份有限公司" : "正常",
+					"大连机床集团有限责任公司" : "可能违约",
+					"大连港集团有限公司" : "正常",
+					"春和集团有限公司" : "可能违约",
+					"成都市公共交通集团有限公司" : "正常",
+					"北京首都旅游集团有限责任公司" : "正常",
+					"北京首都开发股份有限公司" : "正常",
+					"北京市基础设施投资有限公司" : "正常",
+					"北京能源集团有限责任公司" : "正常",
+					"北京经济技术投资开发总公司" : "正常",
+					"北京京能清洁能源电力股份有限公司" : "正常",
+					"北京京能电力股份有限公司" : "正常",
+					"北京金隅股份有限公司" : "正常",
+					"北京金融街资本运营中心" : "正常",
+					"北京国有资本经营管理中心" : "正常",
+					"宝山钢铁股份有限公司" : "正常"
+				};
+				for ( var companyName in companies) {
+
+					$("#companySelect").append(
+							"<option value='"+companyName+"'>" + companyName
+									+ "</option>");
+				}
+				$("#companySelect").change(function() {
+					$("#companyResult").html(companies[$(this).val()]);
+				});
+			});
+</script>
+<style>
+body {
+	font-family: Microsoft YaHei;
+}
+
+.table {
+	height: 100px;
+}
+</style>
+<script type="text/javascript" src="js/bootstra.min.js"></script>
+</head>
+<body>
+
+	<!-- Main Content -->
+	<div class="main-content">
+		<div class="wrapper">
+
+			<!-- Header -->
+			<div class="header">
+				<div class="logo">
+					<img src="img/logo.png" alt="" />
+				</div>
+				<div class="navi">
+					<ul>
+						<li><a href="lhzs.html">择时模型</a>
+						</li>
+						<li><a href="lhld.html">轮动模型</a>
+						</li>
+						<li class="active"><a href="wyyj.html">违约预警</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- END Header -->
+			<div style="clear: both;"></div>
+			<!-- Slider -->
+			<div class="slider">
+
+				<!-- Slider Content 1 -->
+				<div class="slide">
+					<div class="slider-txt">
+						<h3>债券违约预警通概述</h3>
+						<p>本产品以市场中公开的财务数据和评级数据为支撑，
+							运用领先的人工智能技术，能够提前分析判断出哪些发行人在下一个财务报表期内有可能会出现信用风险，保护投资者利益，避免财产出现损失。</p>
+
+					</div>
+
+				</div>
+
+
+			</div>
+			<!-- END Slider -->
+			<div style="clear: both;"></div>
+		</div>
+		<!-- END Wrapper -->
+	</div>
+	<!-- END Main Content -->
+
+	<!--Hidden-->
+	<div class="pagi">
+		<div class="wrapper">
+			<div id="nav"></div>
+		</div>
+	</div>
+	<!--END Hidden-->
+
+	<!-- Features -->
+	<!--<div class="features">
+		<div class="wrapper">
+			<h3>
+				<object type="application/x-shockwave-flash" data="img/yj.swf"
+					width="800" height="600">
+					<param name="movie" value="img/yj.swf" />
+					<img src="http://xuguangzhi2003.blog.163.com/blog/noflash.gif"
+						width="200" height="100" alt="" />
+				</object>
+			</h3>
+
+
+		</div>
+	</div>-->
+
+
+	<div class="clear"></div>
+
+	<!-- iMac Slider -->
+
+	<div class="slider2">
+		<div class="wrapper dingwei">
+
+			<h3>
+				<span>债券发行人违约预测<br> <br> </span>
+			</h3>
+			<!--请输入待预测的债券发行人公司名称-->
+			<div id="search">
+				<div class="first"><input id="kw" placeholder="请输入待预测的债券发行人公司名称"/></div>
+				<div id="append"></div>
+			</div>
+				<!--data-width="auto" data-size="5" data-live-search="true" id="companySelect" class="selectpicker show-menu-arrow"-->
+			<div class="row-fluid">
+				<h3>
+					预测结果：<span id="result" style="font-size: 20px;"> 请选择
+					</span>
+				</h3>
+				<h4>此为根据发行人最近一个半年度财务报表期（年报、 半年报）的公开数据而得出的预测结果，				预测时限为下一个半年度财务报表周期。</h4>
+			</div>
+
+		</div>
+	</div>
+	<!-- Features -->
+
+	<!-- Features -->
+	<div class="features" id="wyyiＦeatures">
+		<div class="wrapper">
+			<h4>
+				<span> 量化模型胜率并非100%，市场环境改变等因素可能使得模型失效，历史表现也不能代表未来。<br>
+					<br> </span>
+			</h4>
+			<h3>
+				<span>请特别注意风险，谨慎投资！</span>
+			</h3>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div class="footer">
+		<div class="wrapper">
+			<div class="copy">
+				<p>
+					<strong>哈工大大数据产业有限公司 </strong><span> &#169; 2017. 版权所有 <a
+						href="http://www.cssmoban.com/" title="网页模板" target="_blank">中国
+					上海市长宁区江苏路369号兆丰世贸大厦18CD </a> </span>
+				</p>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
+<script src="js/hidden.js"></script>
+<script src="js/gain.js"></script>
